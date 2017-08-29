@@ -1,0 +1,125 @@
+CONDITIONALS
+
+There are several concepts that we need to understand to deal with
+conditionals:
+
+  1. boolean values, thus boolean variables
+
+  2. relational operators and relational expresssions
+     A relational expression evaluates to a boolean value.
+
+  3. Logical operators and logical expressions
+     A logical expression also evaluates to a logical value (boolean
+     value). 
+
+  4. Finally conditionals that use these
+
+
+Let's discuss these four in order.
+
+1. Boolean values (logical values), thus boolean variables
+
+   'boolean' is a type in Java just like 'int' is one.  So, we can
+   declare a boolean variable much like we declare an int variable.
+   Here is an example:
+
+       boolean isSunny;
+
+   How many possible int values are there in Java?  Many.  How many
+   possible boolean values are there in Java (or in a programming
+   language in general)? Two.  Yes, only two!  What are they?  'true'
+   and 'false' (without the quotes).  So you can have a boolean
+   declaration like: 
+
+       boolean isSunny = true;
+
+   and then change the value to false if you need to in your program
+   like this:
+
+      isSunny = false;
+
+   or
+
+      isSunny = !isSunny;
+
+
+2. Relational operators and relational expresssions
+
+   There are a small number of relational operators: >, >=, <, <=,
+   ==, !=.   You can write relational expressions using relational
+   operators.  Here are some examples:
+
+      45 > 56
+      a <= 45
+      (c + d) >= (c + a + d - (45 * k))
+      (34 + a) == (d / f)
+   
+   A relational expression evaluates to a boolean value (logical
+   value).  Let's see what the evaluated values of these would be:
+
+      45 > 56   ==> false
+      a <= 45   ==> depends on the value of a, but will be ture or false
+      (c + d) >= (c + a + d - (45 * k))  ==> similarly here
+      (34 + a) == (d / f)   ==> similarly here
+   
+
+3. Logical operators and logical expressions
+
+   There are a small number of logical operators: && (and), || (or), !
+   (not).  Logical operators take logical values as operands.  You can
+   write logical expressions using logical operators.  Of course,
+   relational expressions can be used to form more complex logical
+   expressions.  Here are some examples:
+
+      true || false
+      true && false
+      !(true)
+      !(4 < 6)
+      (45 > 56) && (a <= 45)
+      ((c + d) >= (c + a + d - (45 * k))) || ((34 + a) == (d / f))
+      !(45 > 56) && (a <= 45)
+   
+
+   A logical expression also evaluates to a logical value (boolean
+   value).   Let's see what the evaluated values of these would be:
+
+      true || false  ==> true
+      true && false  ==> false
+      !(true)        ==> false
+      !(4 < 6)       ==> false
+      (45 > 56) && (a <= 45)  ==> depends on the value of a
+      ((c + d) >= (c + a + d - (45 * k))) || ((34 + a) == (d / f))
+                                                       ==> depends
+      !(85 < 56) && (10 > 45)     ==> false
+      !((85 < 56) && (10 > 45))   ==> true
+
+   Let's see all possible combinations for these three logical
+   operators using a truth table:
+
+      A  B    A and B     A or B   not A       0 for false
+     ------------------------------------      1 for true
+      0  0       0          0        1
+      0  1       0          1        1
+      1  0       0          1        0
+      1  1       1          1        0
+
+
+4. Conditionals now
+
+   A conditional statement is of the following form.  That is, this
+   is the syntax of "if statement":
+
+       if (<booleanExpression>) {
+          <true_branch_statement>
+       }
+       else {
+          <false_branch_statement>
+       }
+
+   The meaning (semantics) of this statement is as follows:  
+   Evaluate the <booleanExpression> first.  If the value is true,
+   then do <true_branch_statement>.  If the value is false, then do
+   <false_branch_statement>.  So, it will end up taking one or the other
+   but never both.
+
+
